@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>For Radha ji 💌</title>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to right, #ffe4e1, #fdfbfb);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      max-width: 90%;
+      width: 600px;
+      z-index: 2;
+      animation: fadeIn 1.5s ease-in-out;
+      text-align: center;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      color: #ff4e77;
+      margin-bottom: 20px;
+      font-size: 32px;
+    }
+
+    p {
+      font-size: 16px;
+      line-height: 1.8;
+      color: #444;
+      white-space: pre-line;
+    }
+
+    .footer {
+      margin-top: 25px;
+      font-size: 14px;
+      text-align: center;
+      color: #999;
+    }
+
+    .highlight {
+      color: #ff4e77;
+      font-weight: 500;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .heart {
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: #ff4e77;
+      transform: rotate(45deg);
+      animation: float 8s infinite ease-in-out;
+    }
+
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 15px;
+      height: 15px;
+      background: #ff4e77;
+      border-radius: 50%;
+    }
+
+    .heart::before {
+      top: -7.5px;
+      left: 0;
+    }
+
+    .heart::after {
+      left: -7.5px;
+      top: 0;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-800px) rotate(45deg);
+        opacity: 0;
+      }
+    }
+
+    .btn {
+      margin-top: 30px;
+      display: block;
+      width: 100%;
+      padding: 12px;
+      background-color: #ff4e77;
+      border: none;
+      color: white;
+      font-weight: 500;
+      border-radius: 12px;
+      cursor: pointer;
+      transition: 0.3s;
+      font-size: 16px;
+    }
+
+    .btn:hover {
+      background-color: #ff6e90;
+    }
+
+    .message {
+      text-align: center;
+      display: none;
+      z-index: 3;
+      animation: fadeInText 2s ease-in-out;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .main-text {
+      font-size: 42px;
+      color: #ff4e77;
+      font-weight: bold;
+      font-family: 'Pacifico', cursive;
+    }
+
+    .sub-text {
+      font-size: 20px;
+      color: #444;
+      font-weight: 500;
+    }
+
+    @keyframes fadeInText {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card" id="card">
+    <h1>For Radha ji 💖</h1>
+    <p>
+Radha ji,
+
+Mai bas itna kehna chahta hu aap kaafi kuch handle kar rahi ho  aur phir bhi sabke saamne strong bani rehti ho Shayad kabhi kabhi aap thak jaati ho par dikhati nahi. Lekin mujhe pata hota hai... kyunki main aapko feel karta hu
+
+Mai chahta hu ki aaj aap thoda sa relax karo, thoda sa saans lo, aur yaad karo aap akele nahi ho  Mai hu na. Har waqt. Har mood mein. Har struggle <main></main>.
+
+Aap jaise log rare hote hai jinke dil mai softness bhi hoti hai aur strength bhi Aapki muskurahat ke liye mai duniya se lad sakta hu Seriously
+
+Jab bhi life confusing lage ya sab kuch over ho jaaye, bas yaad rakhna — ek pagal ladka hai duniya mai jise aap ki smile sabse zyada pyaari lagti hai... aur woh chahta hai ki aap kabhi na rukein. Kabhi na tootein. Kabhi na bhoolen ki aap **best ho**.
+
+Mai hamesha proud feel karta hoon ki aap meri life mein ho.
+
+🫂 Sending you warmth, strength, aur ek chhoti si smile... 😊
+
+Tumhara hamesha wala,
+<span class="highlight">Raghav</span>
+    </p>
+
+    <button class="btn" id="revealBtn">Click here, Radha ji 💕</button>
+
+    <div class="footer">Made with pure love 💌 Just for you, Radha ji.</div>
+  </div>
+
+  <div class="message" id="message">
+    <div class="main-text">I loveee u Raddhaa 💕</div>
+    <div class="sub-text">Main hamesha tumhare saath hu ❤️</div>
+  </div>
+
+  <script>
+    window.onload = function () {
+      // Floating hearts
+      for (let i = 0; i < 30; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.style.left = Math.random() * 100 + 'vw';
+        heart.style.animationDuration = (Math.random() * 5 + 3) + 's';
+        heart.style.opacity = Math.random();
+        document.body.appendChild(heart);
+      }
+
+      // Button click
+      const btn = document.getElementById("revealBtn");
+      const card = document.getElementById("card");
+      const message = document.getElementById("message");
+
+      btn.addEventListener("click", function () {
+        card.style.display = "none";         // Hide letter
+        message.style.display = "flex";      // Show love message
+      });
+    };
+  </script>
+
+</body>
+</html>
