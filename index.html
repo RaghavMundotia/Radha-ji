@@ -19,17 +19,18 @@
       display: flex;
       justify-content: center;
       align-items: center;
-      overflow: hidden;
+      overflow-x: hidden;
+      padding: 20px;
       position: relative;
     }
 
     .card {
       background: #fff;
-      padding: 40px 30px;
+      padding: 30px 20px;
       border-radius: 20px;
       box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
-      max-width: 90%;
-      width: 600px;
+      width: 100%;
+      max-width: 500px;
       z-index: 2;
       animation: fadeIn 1.5s ease-in-out;
       text-align: center;
@@ -39,11 +40,11 @@
       font-family: 'Pacifico', cursive;
       color: #ff4e77;
       margin-bottom: 20px;
-      font-size: 32px;
+      font-size: clamp(24px, 5vw, 32px);
     }
 
     p {
-      font-size: 16px;
+      font-size: clamp(14px, 3vw, 16px);
       line-height: 1.8;
       color: #444;
       white-space: pre-line;
@@ -108,7 +109,6 @@
 
     .btn {
       margin-top: 30px;
-      display: block;
       width: 100%;
       padding: 12px;
       background-color: #ff4e77;
@@ -132,17 +132,19 @@
       animation: fadeInText 2s ease-in-out;
       flex-direction: column;
       gap: 15px;
+      width: 100%;
+      max-width: 500px;
     }
 
     .main-text {
-      font-size: 42px;
+      font-size: clamp(28px, 7vw, 42px);
       color: #ff4e77;
       font-weight: bold;
       font-family: 'Pacifico', cursive;
     }
 
     .sub-text {
-      font-size: 20px;
+      font-size: clamp(16px, 4vw, 20px);
       color: #444;
       font-weight: 500;
     }
@@ -150,6 +152,17 @@
     @keyframes fadeInText {
       from { opacity: 0; transform: scale(0.9); }
       to { opacity: 1; transform: scale(1); }
+    }
+
+    @media (max-width: 400px) {
+      .card, .message {
+        padding: 20px 15px;
+      }
+
+      .btn {
+        font-size: 15px;
+        padding: 10px;
+      }
     }
   </style>
 </head>
@@ -162,7 +175,7 @@ Radha ji,
 
 Mai bas itna kehna chahta hu aap kaafi kuch handle kar rahi ho  aur phir bhi sabke saamne strong bani rehti ho Shayad kabhi kabhi aap thak jaati ho par dikhati nahi. Lekin mujhe pata hota hai... kyunki main aapko feel karta hu
 
-Mai chahta hu ki aaj aap thoda sa relax karo, thoda sa saans lo, aur yaad karo aap akele nahi ho  Mai hu na. Har waqt. Har mood mein. Har struggle <main></main>.
+Mai chahta hu ki aaj aap thoda sa relax karo, thoda sa saans lo, aur yaad karo aap akele nahi ho  Mai hu na. Har waqt. Har mood mein. Har struggle mein.
 
 Aap jaise log rare hote hai jinke dil mai softness bhi hoti hai aur strength bhi Aapki muskurahat ke liye mai duniya se lad sakta hu Seriously
 
@@ -204,8 +217,8 @@ Tumhara hamesha wala,
       const message = document.getElementById("message");
 
       btn.addEventListener("click", function () {
-        card.style.display = "none";         // Hide letter
-        message.style.display = "flex";      // Show love message
+        card.style.display = "none";         
+        message.style.display = "flex";      
       });
     };
   </script>
